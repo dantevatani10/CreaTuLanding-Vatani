@@ -1,8 +1,8 @@
 // ItemListContainer.jsx
 import React, { useState } from 'react';
 
-const ItemListContainer = ({ 
-    greeting, 
+const ItemListContainer = ({
+    greeting,
     mainTitle,
     brandTitles = {
         apple: "Productos Apple",
@@ -41,7 +41,7 @@ const ItemListContainer = ({
         setSelectedBrand(brand === selectedBrand ? null : brand);
     };
 
-    const categoriesToShow = selectedBrand 
+    const categoriesToShow = selectedBrand
         ? { [selectedBrand]: categories[selectedBrand] }
         : categories;
 
@@ -49,7 +49,7 @@ const ItemListContainer = ({
         <div className="container my-5">
             <h1 className="text-center mb-4">{greeting}</h1>
             <h2 className="text-center mb-4">{mainTitle}</h2>
-            
+
             {/* Botones de filtrado */}
             <div className="d-flex justify-content-center gap-3 mb-5">
                 {Object.keys(categories).map(brand => (
@@ -71,9 +71,9 @@ const ItemListContainer = ({
                         {products.map(product => (
                             <div key={product.id} className="col">
                                 <div className="card h-100">
-                                    <img 
-                                        src={product.image} 
-                                        className="card-img-top" 
+                                    <img
+                                        src={product.image}
+                                        className="card-img-top"
                                         alt={product.name}
                                     />
                                     <div className="card-body">
